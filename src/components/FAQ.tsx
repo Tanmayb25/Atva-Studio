@@ -53,10 +53,10 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-white/70 text-lg">
+          <p className="text-white/70 text-base">
             Got questions? We&apos;ve got answers.
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ export default function FAQ() {
                 <motion.span
                   animate={{ rotate: openIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.2 }}
-                  className="text-[#FF5733] text-2xl flex-shrink-0"
+                  className="text-[#FF5733] text-xl flex-shrink-0"
                 >
                   +
                 </motion.span>
@@ -95,7 +95,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-7 pb-6 text-white/70 text-base leading-relaxed pt-2">
+                    <div className="px-7 pb-6 text-white/70 text-sm leading-relaxed pt-2">
                       {faq.answer}
                     </div>
                   </motion.div>

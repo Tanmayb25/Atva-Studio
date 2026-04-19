@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion";
 
+function scrollToContact() {
+  const el = document.querySelector("#contact");
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+}
+
 const pricingPlans = [
   {
     name: "Starter",
@@ -125,6 +130,8 @@ export default function Pricing() {
                 ))}
               </ul>
               <motion.button
+                type="button"
+                onClick={scrollToContact}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-3 rounded-full font-medium transition-all duration-300 ${

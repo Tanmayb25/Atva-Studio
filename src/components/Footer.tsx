@@ -1,6 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+import { SITE_LOGO_ALT, SITE_LOGO_SRC } from "@/constants/brand";
 
 export default function Footer() {
   return (
@@ -12,10 +15,29 @@ export default function Footer() {
       className="py-12 px-6 border-t border-[#3C3C3C]"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Copyright */}
-          <div className="text-white/50 text-sm">
-            © 2026 atva. All rights reserved.
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:gap-5">
+            <motion.a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="shrink-0 opacity-90 transition-opacity hover:opacity-100"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Image
+                src={SITE_LOGO_SRC}
+                alt={SITE_LOGO_ALT}
+                width={112}
+                height={36}
+                className="h-8 w-auto"
+              />
+            </motion.a>
+            <p className="text-center text-sm text-white/50 md:text-left">
+              © 2026 atva. All rights reserved.
+            </p>
           </div>
 
           {/* Social & Links */}

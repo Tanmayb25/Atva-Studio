@@ -14,10 +14,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">
               About atva
             </h2>
-            <div className="space-y-5 text-white/75 leading-relaxed text-base md:text-lg">
+            <div className="space-y-4 text-white/75 leading-relaxed text-sm md:text-base">
               <p>
                 We&apos;re not your typical agency. At atva, we blend cutting-edge 
                 technology with battle-tested marketing strategies to deliver 
@@ -38,7 +38,7 @@ export default function About() {
 
             <div className="mt-12 grid grid-cols-2 gap-8">
               <div>
-                <div className="text-2xl font-bold text-[#FF5733] mb-1">
+                <div className="text-xl font-bold text-[#FF5733] mb-1">
                   Data-Driven
                 </div>
                 <p className="text-sm text-white/70">
@@ -46,7 +46,7 @@ export default function About() {
                 </p>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[#FF5733] mb-1">
+                <div className="text-xl font-bold text-[#FF5733] mb-1">
                   Results-First
                 </div>
                 <p className="text-sm text-white/70">
@@ -71,7 +71,7 @@ export default function About() {
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="w-32 h-32 mx-auto mb-6 rounded-full bg-[#FF5733]/10 shadow-lg shadow-[#FF5733]/10"
                 />
-                <div className="text-6xl font-bold text-[#FF5733]">
+                <div className="text-5xl font-bold text-[#FF5733]">
                   atva
                 </div>
                 <p className="text-white/70 mt-2 text-sm">

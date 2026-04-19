@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import { SITE_LOGO_SRC } from "@/constants/brand";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,9 +19,9 @@ export const metadata: Metadata = {
   description:
     "atva is a data-driven agency specializing in digital marketing, SEO, website design, Google Ads, Meta Ads, and AI-powered automation solutions.",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: SITE_LOGO_SRC,
+    shortcut: SITE_LOGO_SRC,
+    apple: SITE_LOGO_SRC,
   },
 };
 

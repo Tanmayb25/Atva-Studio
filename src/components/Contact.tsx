@@ -36,10 +36,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
             Contact Us
           </h2>
-          <p className="text-white/70 text-lg max-w-xl mx-auto">
+          <p className="text-white/70 text-base max-w-xl mx-auto">
             Ready to grow your business? Let&apos;s talk. Fill out the form below 
             and we&apos;ll get back to you within 24 hours.
           </p>
@@ -135,7 +135,7 @@ export default function Contact() {
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-5 rounded-full bg-[#FF5733] text-white font-semibold text-lg hover:bg-[#FF5733]/90 transition-all duration-300 shadow-xl shadow-black/30"
+              className="w-full py-4 rounded-full bg-[#FF5733] text-white font-semibold text-base hover:bg-[#FF5733]/90 transition-all duration-300 shadow-xl shadow-black/30"
             >
               Send Message
             </motion.button>

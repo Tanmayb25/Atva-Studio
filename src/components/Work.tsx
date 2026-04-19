@@ -78,10 +78,10 @@ export default function Work() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
               Our Work
             </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-base max-w-2xl mx-auto">
               A selection of projects where we&apos;ve driven exceptional results
             </p>
           </motion.div>
@@ -109,7 +109,7 @@ export default function Work() {
               <div className="text-xs text-[#FF5733] font-medium mb-2">
                 {project.category}
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#FF5733] transition-colors">
+              <h3 className="text-base font-semibold text-white mb-2 group-hover:text-[#FF5733] transition-colors">
                 {project.title}
               </h3>
               <p className="text-sm text-white/70 leading-relaxed mb-5">{project.description}</p>
@@ -166,10 +166,10 @@ export default function Work() {
                 <div className="text-xs text-[#FF5733] font-medium mb-3 tracking-wider uppercase">
                   {selectedProject.category}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
                   {selectedProject.title}
                 </h3>
-                <p className="text-white/60 text-base">
+                <p className="text-white/60 text-sm">
                   {selectedProject.description}
                 </p>
               </div>
@@ -184,7 +184,7 @@ export default function Work() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                       </svg>
                     </div>
-                    <h4 className="text-lg font-semibold text-white">Problem</h4>
+                    <h4 className="text-base font-semibold text-white">Problem</h4>
                   </div>
                   <p className="text-white/70 leading-relaxed">{selectedProject.problem}</p>
                 </div>
@@ -197,7 +197,7 @@ export default function Work() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
                     </div>
-                    <h4 className="text-lg font-semibold text-white">Solution</h4>
+                    <h4 className="text-base font-semibold text-white">Solution</h4>
                   </div>
                   <p className="text-white/70 leading-relaxed">{selectedProject.solution}</p>
                 </div>
@@ -210,7 +210,7 @@ export default function Work() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
                     </div>
-                    <h4 className="text-lg font-semibold text-white">Result</h4>
+                    <h4 className="text-base font-semibold text-white">Result</h4>
                   </div>
                   <p className="text-white/70 leading-relaxed">{selectedProject.result}</p>
                 </div>

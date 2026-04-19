@@ -28,6 +28,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Fixed header (~56px) + breathing room for in-page anchors */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 ::selection {
   background: rgba(147, 51, 234, 0.3);
   color: #fff;

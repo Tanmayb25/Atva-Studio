@@ -11,14 +11,16 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import StorySection from "@/components/StorySection";
+import ShowcaseBanner from "@/components/ShowcaseBanner";
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-white overflow-x-hidden">
+    <main className="min-h-screen text-white overflow-x-clip">
       <Header />
       <StorySection>
         <Hero />
       </StorySection>
+      <ShowcaseBanner />
       <div className="bg-black">
         <Services />
       </div>

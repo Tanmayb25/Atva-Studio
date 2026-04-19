@@ -18,10 +18,11 @@ export default function StorySection({ children, className }: StorySectionProps)
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [24, -24]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.985, 1.01]);
-  const opacity = useTransform(scrollYProgress, [0, 0.12, 0.88, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.985, 1.005]);
+  // Fade in as the block enters; stay visible through exit so content never “blinks out” mid-scroll
+  const opacity = useTransform(scrollYProgress, [0, 0.14, 1], [0, 1, 1]);
 
-  const glowOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.55, 0.55, 0]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 0.28, 0.72, 1], [0, 0.5, 0.5, 0]);
   const glowY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (

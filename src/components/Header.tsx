@@ -4,11 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+import { SITE_LOGO_ALT, SITE_LOGO_SRC } from "@/constants/brand";
+
 const navItems = [
   { label: "Services", href: "#services" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Work", href: "#work" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Process", href: "#process" },
+  { label: "Work", href: "#work" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -51,7 +54,11 @@ export default function Header() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 z-50 w-full"
       >
-        <div className="bg-[#1A1A1A]/30 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
+        <div
+          className={`backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] transition-[background-color] duration-300 ${
+            scrolled ? "bg-[#1A1A1A]/85" : "bg-[#1A1A1A]/30"
+          }`}
+        >
           <div className="flex h-14 items-center justify-between px-4 sm:px-6">
             {/* Left: Logo */}
             <motion.a
@@ -65,10 +72,10 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="/logo.png"
-                alt="ATVA Logo"
-                width={80}
-                height={32}
+                src={SITE_LOGO_SRC}
+                alt={SITE_LOGO_ALT}
+                width={120}
+                height={40}
                 className="h-7 w-auto"
                 priority
               />
