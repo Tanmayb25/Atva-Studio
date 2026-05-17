@@ -1,8 +1,33 @@
+
 "use client";
 
 import HeroServiceRotator from "@/components/HeroServiceRotator";
+import { useEffect, useState } from "react";
+
+const CAROUSEL_IMAGES = [
+  "/hero/content.jpg",
+  "/hero/strategy.jpg",
+  "/hero/socialmedia2.jpg",
+  "/hero/cowork.jpg",
+  "/hero/socialmedia.jpg",
+];
+
+const INTERVAL_MS = 4000;
 
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState<number | null>(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((c) => {
+        setPrev(c);
+        return (c + 1) % CAROUSEL_IMAGES.length;
+      });
+    }, INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
@@ -12,23 +37,25 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Full-viewport video — fixed so it reads as one continuous layer */}
+      {/* Carousel background */}
       <div className="pointer-events-none fixed inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/vid.mp4" type="video/mp4" />
-        </video>
+        {CAROUSEL_IMAGES.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt=""
+            aria-hidden
+            className={[
+              "absolute inset-0 h-full w-full object-cover transition-opacity duration-1000",
+              i === current ? "opacity-100" : "opacity-0",
+            ].join(" ")}
+          />
+        ))}
         <div className="absolute inset-0 bg-black/20" aria-hidden />
         <div className="absolute inset-0 bg-[#1A1A1A]/70" aria-hidden />
       </div>
 
-      {/* Content: fixed side gutters (no lg/xl ramp), left-hug layout so ultra-wide doesn’t balloon side margins */}
+      {/* Content */}
       <div className="relative z-10 flex min-h-screen w-full flex-col justify-end px-5 pb-28 pt-24 sm:px-8 md:px-10 md:pb-36">
         <div className="w-full max-w-xl">
           <h1 className="text-2xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
@@ -46,6 +73,24 @@ export default function Hero() {
             >
               Let&apos;s Grow Your Business
             </button>
+          </div>
+
+          {/* Dot indicators */}
+          <div className="mt-8 flex gap-2">
+            {CAROUSEL_IMAGES.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => { setPrev(current); setCurrent(i); }}
+                className={[
+                  "h-1.5 rounded-full transition-all duration-300",
+                  i === current
+                    ? "w-6 bg-[#FF5733]"
+                    : "w-1.5 bg-white/40 hover:bg-white/60",
+                ].join(" ")}
+              />
+            ))}
           </div>
         </div>
       </div>

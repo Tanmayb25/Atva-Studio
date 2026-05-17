@@ -14,10 +14,12 @@ const pricingPlans = [
     period: "per project",
     description: "Perfect for small businesses just getting started",
     features: [
-      "Single service engagement",
-      "Basic reporting",
+      "One-page website",
+      "SEO setup",
+      "Copywriting",
+      "Brand starter kit",
+      "Basic social setup",
       "Email support",
-      "1 revision round",
     ],
   },
   {
@@ -26,11 +28,12 @@ const pricingPlans = [
     period: "per month",
     description: "For businesses ready to scale their digital presence",
     features: [
-      "Multi-channel marketing",
-      "Weekly analytics reports",
+      "Multi-page website",
+      "Social media management",
+      "Digital marketing",
+      "Content strategy",
+      "Analytics & reporting",
       "Priority support",
-      "Unlimited revisions",
-      "Strategy sessions",
     ],
     popular: true,
   },
@@ -40,12 +43,14 @@ const pricingPlans = [
     period: "tailored",
     description: "Full-service solution for established businesses",
     features: [
-      "All services included",
-      "Dedicated account manager",
-      "24/7 support",
-      "Custom AI solutions",
-      "Monthly strategy reviews",
-      "Performance guarantees",
+      "AI enablement",
+      "Marketing automation",
+      "AI agents & assistants",
+      "Funnel optimization",
+      "Influencer marketing",
+      "Video marketing",
+      "Dedicated account management",
+      "Ongoing optimization",
     ],
   },
 ];
@@ -111,10 +116,10 @@ export default function Pricing() {
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl font-bold text-white">
+                  {/* <span className="text-4xl font-bold text-white">
                     {plan.price}
-                  </span>
-                  <span className="text-white/50 text-sm">/{plan.period}</span>
+                  </span> */}
+                  {/* <span className="text-white/50 text-sm">/{plan.period}</span> */}
                 </div>
                 <p className="text-white/80 text-sm mt-2">{plan.description}</p>
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { data } from "framer-motion/client";
 import { useRef, useState } from "react";
 
 interface Project {
@@ -10,56 +11,48 @@ interface Project {
   problem: string;
   solution: string;
   result: string;
+  liveLink?: string;
+  image?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "TechFlow SaaS",
-    description: "Complete brand overhaul and 300% increase in organic traffic",
-    category: "SEO & Branding",
-    problem: "TechFlow had a dated brand identity and was struggling to rank for competitive SaaS keywords. Their organic traffic had plateaued and they were losing market share to newer competitors.",
-    solution: "We conducted a comprehensive brand audit and redesigned their visual identity. Implemented a technical SEO overhaul, created a content strategy targeting high-intent keywords, and built authoritative backlinks through strategic outreach.",
-    result: "300% increase in organic traffic within 6 months. Brand recognition improved significantly with a 45% increase in branded searches. Lead generation from organic channels grew by 250%.",
-  },
-  {
-    title: "GreenLeaf E-commerce",
-    description: "Custom Shopify build with 5x conversion rate improvement",
-    category: "Web Design",
-    problem: "GreenLeaf's existing website had a 0.8% conversion rate, poor mobile experience, and a checkout process that caused 70% cart abandonment. Revenue was stagnating despite growing traffic.",
-    solution: "Designed and developed a custom Shopify theme optimized for conversions. Implemented one-click checkout, improved product photography presentation, added trust signals, and created a seamless mobile-first experience.",
-    result: "Conversion rate jumped from 0.8% to 4.2% (5x improvement). Cart abandonment reduced to 35%. Mobile revenue increased by 180%. Overall revenue grew 320% year-over-year.",
-  },
-  {
-    title: "FinanceHub",
-    description: "Google Ads campaign delivering 8x ROAS consistently",
-    category: "Google Ads",
-    problem: "FinanceHub was spending $50K/month on Google Ads with only 2x ROAS. High CPCs in the competitive finance niche were eating into margins, and they couldn't scale profitably.",
-    solution: "Restructured campaigns with tight ad groups and negative keyword lists. Implemented smart bidding strategies, created high-converting landing pages, and developed a remarketing funnel to capture warm leads.",
-    result: "Achieved consistent 8x ROAS while scaling spend to $150K/month. Cost per acquisition dropped by 60%. Generated $1.2M in attributable revenue within the first quarter.",
-  },
-  {
-    title: "HealthFirst Clinic",
-    description: "Local SEO strategy resulting in #1 rankings across 15 keywords",
-    category: "SEO",
-    problem: "HealthFirst was invisible in local search results, ranking on page 3+ for key terms. Competitors dominated the Google Map Pack, and the clinic was losing patients to nearby practices.",
-    solution: "Optimized Google Business Profile, built local citations, implemented schema markup, and created location-specific content. Developed a review generation strategy and built local backlinks from health directories.",
-    result: "#1 rankings for 15 high-value local keywords. Appeared in Google Map Pack for all target searches. New patient inquiries increased by 400%. Became the top-rated clinic in the area with 200+ 5-star reviews.",
-  },
-  {
-    title: "AutoMate AI",
-    description: "AI-powered workflow automation saving 40 hours weekly",
-    category: "AI Consulting",
-    problem: "AutoMate's team was drowning in repetitive tasks—data entry, report generation, and customer follow-ups consumed 60+ hours weekly. Growth was limited by operational bottlenecks.",
-    solution: "Audited existing workflows and identified automation opportunities. Implemented AI-powered solutions for data processing, built custom GPT integrations for customer communications, and created automated reporting dashboards.",
-    result: "Reduced manual work by 40 hours per week. Team productivity increased by 65%. Enabled the company to scale operations without additional hires. ROI achieved within 2 months.",
-  },
-  {
-    title: "StyleBox Fashion",
-    description: "Meta Ads scaling from $5K to $50K monthly spend profitably",
-    category: "Meta Ads",
-    problem: "StyleBox couldn't scale their Meta Ads beyond $5K/month without seeing diminishing returns. Creative fatigue was constant, and audience targeting had become ineffective.",
-    solution: "Developed a creative testing framework with 20+ ad variations monthly. Implemented broad targeting with creative-led optimization, built a full-funnel campaign structure, and created UGC-style content that resonated with the audience.",
-    result: "Scaled from $5K to $50K monthly spend while maintaining 4x ROAS. Customer acquisition cost remained stable during scaling. Generated $2.4M in revenue from Meta Ads alone in 12 months.",
+    title: "Helios Investment",
+    description: "Modern brand identity and website for investment firm.",
+    category: "Brand Website",
+    problem: `Helios Investments, a new financial advisory firm, needed a professional digital presence to attract and onboard clients for personal and small business portfolio management services. The firm required a comprehensive website that could:
+
+• Qualify leads through an interactive financial assessment quiz
+• Capture and organize client data for follow-up
+• Demonstrate expertise through educational content
+• Provide practical financial tools
+• Build trust and credibility with potential clients`,
+    solution: `Developed a full-featured website with the following components:
+
+Lead Generation & Qualification
+• Interactive Financial Assessment Quiz: Custom questionnaire evaluating client needs, risk tolerance, and investment gaps
+• Automated Data Capture: Quiz responses and contact information automatically stored in Google Sheets for admin review
+• Lead Management System: Structured data pipeline enabling advisors to efficiently follow up with qualified prospects
+
+Content & Tools
+• Educational Blog: Finance and investment articles written by firm owner to establish thought leadership
+• SIP Calculator: Interactive tool for clients to calculate potential returns on systematic investment plans
+• Service Pages: Detailed information about portfolio management and advisory services
+
+Trust Building
+• Professional Homepage: Firm overview, team credentials, and client testimonials
+• Process Transparency: Clear roadmap showing how the firm works with clients
+• Responsive Design: Optimized experience across all devices
+
+Technical Implementation
+• Modern Tech Stack: Next.js with TypeScript for performance and maintainability
+• Seamless Integration: Google Sheets API for efficient data management
+• User Experience: Smooth interactions and intuitive navigation
+
+The solution provides Helios Investments with a scalable platform to attract, qualify, and convert leads while establishing their expertise in the financial advisory space.`, 
+    result: `Successfully launched a comprehensive digital platform that generated 150+ qualified leads in the first quarter. Client conversion rate increased by 65%.`,
+    image: "/work_helios.png",
+    liveLink: "https://heliosinvestments.in/",
   },
 ];
 
@@ -102,9 +95,19 @@ export default function Work() {
               whileHover={{ y: -5 }}
               className="flex-shrink-0 w-80 p-7 rounded-2xl bg-[#242424] shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 transition-all duration-300 group"
             >
-              {/* Image placeholder */}
-              <div className="aspect-video rounded-xl bg-[#1A1A1A] mb-5 flex items-center justify-center shadow-md shadow-black/20">
-                <div className="text-4xl opacity-50">🖼️</div>
+              {/* Project image */}
+              <div className="aspect-video rounded-xl bg-[#1A1A1A] mb-5 overflow-hidden shadow-md shadow-black/20">
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} Project`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-4xl opacity-50">🖼️</div>
+                  </div>
+                )}
               </div>
               <div className="text-xs text-[#FF5733] font-medium mb-2">
                 {project.category}
@@ -171,6 +174,19 @@ export default function Work() {
                 </h3>
                 <p className="text-white/60 text-sm">
                   {selectedProject.description}
+                  {selectedProject.liveLink && (
+                    <a
+                      href={selectedProject.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-3 text-[#FF5733] hover:text-[#FF5733]/80 transition-colors"
+                    >
+                      <span>View Live Website</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
                 </p>
               </div>
 
@@ -186,7 +202,7 @@ export default function Work() {
                     </div>
                     <h4 className="text-base font-semibold text-white">Problem</h4>
                   </div>
-                  <p className="text-white/70 leading-relaxed">{selectedProject.problem}</p>
+                  <p className="text-white/70 leading-relaxed whitespace-pre-line">{selectedProject.problem}</p>
                 </div>
 
                 {/* Solution */}
@@ -199,7 +215,7 @@ export default function Work() {
                     </div>
                     <h4 className="text-base font-semibold text-white">Solution</h4>
                   </div>
-                  <p className="text-white/70 leading-relaxed">{selectedProject.solution}</p>
+                  <p className="text-white/70 leading-relaxed whitespace-pre-line">{selectedProject.solution}</p>
                 </div>
 
                 {/* Result */}
@@ -213,6 +229,7 @@ export default function Work() {
                     <h4 className="text-base font-semibold text-white">Result</h4>
                   </div>
                   <p className="text-white/70 leading-relaxed">{selectedProject.result}</p>
+                  
                 </div>
               </div>
             </motion.div>

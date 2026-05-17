@@ -33,7 +33,7 @@ export default function Services() {
         items: [
           "Brand identity, visual design, logos & motion",
           "Website Design & Development",
-          "Marketing collateral—OOH, print & signage",
+          "Marketing collateral — Magazines, print & signage",
         ],
       },
       {
