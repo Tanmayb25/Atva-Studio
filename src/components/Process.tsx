@@ -242,7 +242,7 @@ const STEPS: Step[] = [
     number: "01",
     title: "Strategy",
     description:
-      "We uncover the highest-leverage opportunities across your market, audience, and funnel — then turn them into a roadmap built for growth.",
+      "We uncover the highest-leverage opportunities across your market, audience, and funnel; then turn them into a roadmap built for growth.",
     badges: ["ICP Defined", "Positioning Clear", "Roadmap Built"],
   },
   {

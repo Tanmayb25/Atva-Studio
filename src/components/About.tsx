@@ -10,7 +10,7 @@ const differentiators = [
   },
   {
     quote: "Beautiful by Design. Built to Convert.",
-    sub: "Aesthetics that stop the scroll — performance that closes the deal.",
+    sub: "Aesthetics that stop the scroll, performance that closes the deal.",
   },
   {
     quote: "We Make Your Brand Impossible to Ignore.",
@@ -105,12 +105,12 @@ export default function About() {
             <div className="space-y-4 text-white/65 leading-relaxed text-sm md:text-base">
               <p>
                 At atva, we blend cutting-edge technology with battle-tested
-                marketing strategies. No fluff, no vanity metrics — just real
+                marketing strategies. No fluff, no vanity metrics, just real
                 business impact built on measurable, scalable growth.
               </p>
               <p>
                 From AI-powered automation to conversion-optimized websites,
-                data-driven SEO to high-performing ad campaigns — we bring the
+                data-driven SEO to high-performing ad campaigns, we bring the
                 full arsenal of modern digital marketing and hand the keys
                 straight to you.
               </p>

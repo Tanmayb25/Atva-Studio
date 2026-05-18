@@ -72,7 +72,7 @@ export default function ShowcaseBanner() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-base md:text-lg text-white/70 max-w-2xl"
         >
-          Strategy, design, content, and marketing—all under one roof.
+          Strategy, design, content, and marketing, all under one roof.
         </motion.p>
       </div>
 
