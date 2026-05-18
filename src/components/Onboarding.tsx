@@ -56,7 +56,7 @@ export default function Onboarding() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500 via-purple-500 to-cyan-500 hidden md:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#FF5733] via-[#FF5733]/50 to-[#FF5733] hidden md:block" />
 
           <div className="space-y-8">
             {onboardingSteps.map((item, index) => (
@@ -69,8 +69,8 @@ export default function Onboarding() {
                 className="relative flex gap-6 md:gap-10"
               >
                 {/* Step number */}
-                <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-zinc-900 border-2 border-cyan-500 flex items-center justify-center">
-                  <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full bg-[#1A1A1A] border-2 border-[#FF5733] flex items-center justify-center">
+                  <span className="text-xl font-bold text-[#FF5733]">
                     {item.step}
                   </span>
                 </div>

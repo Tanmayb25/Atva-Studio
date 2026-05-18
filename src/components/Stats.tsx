@@ -42,7 +42,7 @@ function AnimatedCounter({
 
 export default function Stats() {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-zinc-900/50 to-black">
+    <section className="py-24 px-6 bg-gradient-to-b from-[#3C3C3C]/30 to-[#1A1A1A]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-[#FF5733] mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-white/80 text-sm">{stat.label}</div>

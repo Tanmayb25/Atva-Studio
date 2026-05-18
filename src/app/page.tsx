@@ -10,22 +10,48 @@ import Work from "@/components/Work";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import StorySection from "@/components/StorySection";
+import ShowcaseBanner from "@/components/ShowcaseBanner";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0b0b0b] text-white overflow-x-hidden">
+    <main className="min-h-screen text-white overflow-x-clip">
       <Header />
-      <Hero />
-      <Services />
-      <Pricing />
-      <Process />
-      <Onboarding />
-      <Stats />
-      <About />
-      <Work />
-      <FAQ />
-      <Contact />
-      <Footer />
+      <StorySection>
+        <Hero />
+      </StorySection>
+      <ShowcaseBanner />
+      <div className="bg-black">
+        <Services />
+      </div>
+      
+      <StorySection className="bg-black">
+        <Process />
+      </StorySection>
+      {/* <StorySection className="bg-black">
+        <Onboarding />
+      </StorySection> */}
+      {/* <StorySection className="bg-black">
+        <Stats />
+      </StorySection> */}
+      <StorySection className="bg-black">
+        <About />
+      </StorySection>
+      <StorySection className="bg-black">
+        <Work />
+      </StorySection>
+      <StorySection className="bg-black">
+        <Pricing />
+      </StorySection>
+      <StorySection className="bg-black">
+        <FAQ />
+      </StorySection>
+      <StorySection className="bg-black">
+        <Contact />
+      </StorySection>
+      <StorySection className="bg-black">
+        <Footer />
+      </StorySection>
     </main>
   );
 }
