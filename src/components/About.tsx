@@ -95,6 +95,8 @@ export default function About() {
               <img 
                 src="/Asset 2.png" 
                 alt="atva logo"
+                loading="lazy"
+                decoding="async"
                 className="w-auto h-auto max-w-full object-contain"
               />
               <p className="text-white/40 text-xs text-right tracking-widest uppercase mt-4">
