@@ -5,11 +5,11 @@ import HeroServiceRotator from "@/components/HeroServiceRotator";
 import { useEffect, useState } from "react";
 
 const CAROUSEL_IMAGES = [
-  "/hero/content.jpg",
-  "/hero/strategy.jpg",
-  "/hero/socialmedia2.jpg",
-  "/hero/cowork.jpg",
-  "/hero/socialmedia.jpg",
+  "/hero/content.webp",
+  "/hero/strategy.webp",
+  "/hero/socialmedia2.webp",
+  "/hero/cowork.webp",
+  "/hero/socialmedia.webp",
 ];
 
 const INTERVAL_MS = 4000;
@@ -45,6 +45,8 @@ export default function Hero() {
             src={src}
             alt=""
             aria-hidden
+            loading={i === current ? "eager" : "lazy"}
+            decoding="async"
             className={[
               "absolute inset-0 h-full w-full object-cover transition-opacity duration-1000",
               i === current ? "opacity-100" : "opacity-0",

@@ -27,11 +27,12 @@ export default function ShowcaseBanner() {
         className="absolute inset-0 will-change-transform"
       >
         <Image
-          src="/services.jpg"
+          src="/services.webp"
           alt="Digital Marketing Excellence"
           fill
+          sizes="100vw"
+          quality={75}
           className="object-cover"
-          priority
         />
       </motion.div>
 
